@@ -1537,7 +1537,12 @@
             // so it greets new visitors without cluttering search or filtered results.
             const isLandingView = activeMode === 'trending' && !searchQuery && !genreId && !year && !rating && !companyFilter;
             const introHtml = isLandingView ? `
-                ` : '';
+                <div class="mb-8 text-center max-w-2xl mx-auto">
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Watch anything.</h2>
+                    <p class="text-gray-400 text-sm sm:text-base mt-2 leading-relaxed">
+                        Obscura is your window into movies and TV. Search thousands of titles, explore cast, trailers and details, and start streaming in seconds — all in one dark, distraction-free place.
+                    </p>
+                </div>` : '';
             
             const html = `
                 <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800 px-4 md:px-8 py-4">
@@ -1584,11 +1589,10 @@
                     ${islandsHtml}
                     ${teaserHtml}
                 </main>
-                <footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm"><div style="text-align: center;">
-    <a href="https://worldflagcounter.com/details/iHq">
-        <img src="https://worldflagcounter.com/iHq/" alt="Flag Counter">
-    </a>
-</div></footer>
+                <footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+                    <p>Obscura</p>
+                    <div class="mt-3 flex justify-center"><a href="https://worldflagcounter.com/details/iHq" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="https://worldflagcounter.com/iHq/" alt="Flag Counter"></a></div>
+                </footer>
                 ${renderBottomNav(currentTab === 'upcoming' ? 'upcoming' : currentTab)}
             `;
             appContainer.innerHTML = html;
@@ -1994,7 +1998,10 @@
                         `}
                     `}
                 </main>
-                <footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm"><p>Obscura</p></footer>
+                <footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+                    <p>Obscura</p>
+                    <div class="mt-3 flex justify-center"><a href="https://worldflagcounter.com/details/iHq" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="https://worldflagcounter.com/iHq/" alt="Flag Counter"></a></div>
+                </footer>
                 ${renderBottomNav('upcoming')}
             `;
             appContainer.innerHTML = html;
